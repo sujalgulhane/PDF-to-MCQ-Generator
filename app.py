@@ -3,11 +3,12 @@
 import streamlit as st
 import fitz  
 import cohere
+# import whisper
 
 
 
 
-COHERE_API_KEY = "9XHFWVJBsMrpVhX047ApRcEoyeUGk1mExiSccXFR"  # Replace with your real key
+COHERE_API_KEY = "9XHFWVJBsMrpVhX047ApRcEoyeUGk1mExiSccXFR"  
 co = cohere.Client(COHERE_API_KEY)
 
 
@@ -27,7 +28,7 @@ def generate_mcqs(topic, content, mcq_num):
 Each question should have 4 options with only one correct answer. Mark the correct answer with (Correct).
 
 Text:
-{content}"""  # Truncate long text for free tier
+{content}"""  
 
     response = co.generate(
         model='command-r-plus',
